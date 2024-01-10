@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Take a glimpse first!
 <p align="center">
-  <img src="notes-app.png" width="800" height="600" title="hover text">
+  <img src="notes-app.png" width="700" height="400" title="hover text">
 </p>
 
 ## Available Scripts
