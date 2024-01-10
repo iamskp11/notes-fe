@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Take a glimpse first!
+<p align="center">
+  <img src="notes-app.png" width="350" title="hover text">
+</p>
+
 ## Available Scripts
 
 In the project directory, you can run:
