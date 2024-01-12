@@ -157,7 +157,6 @@ const DisplayNotes = () => {
           onKeyDown={handleSearchKeyDown}
 		className="search-input" 
         />
-        <button onClick={handleSearch}>Search</button>
       </div>
 
       {notes.map((note) => (
