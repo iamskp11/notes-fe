@@ -7,7 +7,7 @@ import DisplayNotes from './components/DisplayNotes';
 
 const App = () => {
   return (
-    <div>
+    <div className="app-container">
       <CreateNote />
       <DisplayNotes />
     </div>

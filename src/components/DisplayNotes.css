@@ -77,3 +77,70 @@
 	background-color: #45a049;
   }
   
+
+  .delete-button {
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .delete-button:hover {
+	background-color: #d32f2f;
+  }
+
+  /* src/components/DisplayNotes.css */
+
+.note {
+	border: 1px solid #ccc;
+	padding: 10px;
+	display: flex;
+	flex-direction: column; /* Align children vertically */
+	margin-bottom: 10px; /* Add a small margin between notes */
+  }
+  
+  .note-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px; /* Adjust margin as needed */
+  }
+  
+  .note-title {
+	font-size: 18px;
+	font-weight: bold;
+  }
+  
+  .note-dates {
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+  }
+
+  .note-dates span {
+	margin-bottom: 4px; /* Add spacing between the date lines */
+  }
+  
+  .note-dates span:first-child {
+	font-weight: bold; /* Make the first date line bold for emphasis */
+  }
+  
+  .note-content {
+	white-space: pre-line; /* Preserve line breaks in content */
+  }
+  
+  .delete-button {
+	background-color: #f44336;
+	color: #fff;
+	padding: 6px 10px; /* Adjust the padding to make the button smaller */
+	border: none;
+	cursor: pointer;
+	align-self: flex-end; /* Align the delete button to the right side */
+  }
+  
+  .delete-button:hover {
+	background-color: #d32f2f;
+  }
+  
+  /* Add the rest of your existing styles for pagination, go-to-page container, etc. */
+  

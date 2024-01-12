@@ -51,6 +51,24 @@ const DisplayNotes = () => {
     setCurrentPage(newPage);
   };
 
+  const handleDeleteNote = async (noteId) => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8080/api/notes/${noteId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete note');
+      }
+
+      // Update the notes after deletion
+      const updatedNotes = notes.filter((note) => note.id !== noteId);
+      setNotes(updatedNotes);
+    } catch (error) {
+      console.error('Error deleting note:', error.message);
+    }
+  };
+
   const formatTimestamp = (timestamp) => {
     const options = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
     return new Date(timestamp).toLocaleDateString('en-GB', options);
@@ -69,26 +87,21 @@ const DisplayNotes = () => {
   return (
     <div className="display-notes-container">
       <h2>All Notes</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Created At</th>
-            <th>Updated At</th>
-          </tr>
-        </thead>
-        <tbody>
-          {notes.map((note) => (
-            <tr key={note.id}>
-              <td>{note.title}</td>
-              <td>{note.content}</td>
-              <td>{formatTimestamp(note.createdAt)}</td>
-              <td>{formatTimestamp(note.updatedAt)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {notes.map((note) => (
+        <div key={note.id} className="note">
+          <div className="note-header">
+            <div className="note-title">{note.title}</div>
+            <div className="note-dates">
+              <span>Created: {formatTimestamp(note.createdAt)}</span>
+              <span>Updated: {formatTimestamp(note.updatedAt)}</span>
+            </div>
+          </div>
+          <div className="note-content">{note.content}</div>
+          <button className="delete-button" onClick={() => handleDeleteNote(note.id)}>
+            Delete
+          </button>
+        </div>
+      ))}
 
 	  <div className="pagination-container">
         <span>Page {currentPage} of {totalNotes}</span>
